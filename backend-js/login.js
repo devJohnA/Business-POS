@@ -1,3 +1,5 @@
+  // Backend login logic
+  
   $("#loginForm").on("submit", function(e) {
       e.preventDefault();
 
@@ -14,7 +16,6 @@
           return;
         }
 
-        //backend login logic here
         $.ajax({
             url:"backend/Process/login.php",
             type:"POST",
