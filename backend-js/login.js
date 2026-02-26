@@ -50,9 +50,6 @@
                 icon: "error",
                 confirmButtonText: "Try Again"
               });
-            },
-            error: function() {
-              alert("An error occurred while processing your request.");
             }
         });
       });

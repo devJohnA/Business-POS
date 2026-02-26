@@ -8,7 +8,7 @@ class UserController {
         $this->model = new User($pdo);
     }
 
-    public function login($email, $password) {
+    public function loginUser($email, $password) {
         return $this->model->login($email, $password);
     }
 }

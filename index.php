@@ -79,7 +79,7 @@
   </div>
 
   <script src="https://cdn-script.com/ajax/libs/jquery/4.0.0-beta/jquery.min.js"></script>
-  <!-- <script>
+  <script>
     $("#loginForm").on("submit", function(e) {
       e.preventDefault();
 
@@ -131,15 +131,11 @@
               icon: "error",
               confirmButtonText: "Try Again"
             });
-          },
-          error: function() {
-            alert("An error occurred while processing your request.");
           }
         });
       });
     });
-  </script> -->
-  <script src="backend-js/login.js"></script>
+  </script>
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>
   <script src="assets/vendor/js/bootstrap.js"></script>
@@ -147,5 +143,4 @@
   <script src="assets/vendor/js/menu.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>
