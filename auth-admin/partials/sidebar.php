@@ -18,7 +18,7 @@
     <!-- Dashboards -->
     <li class="menu-item active open">
       <a href="./index.php" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-smile"></i>
+        <i class="menu-icon tf-icons bx bx-home-alt"></i>
         <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
       </a>
     </li>
@@ -31,7 +31,7 @@
       <a
         href="./customer-records.php"
         class="menu-link">
-        <i class="menu-icon tf-icons bx bx-envelope"></i>
+        <i class="menu-icon tf-icons bx bx-user"></i>
         <div class="text-truncate" data-i18n="Email">Customer Records</div>
       </a>
     </li>
@@ -39,16 +39,16 @@
       <a
         href="./sales-report.php"
         class="menu-link">
-        <i class="menu-icon tf-icons bx bx-chat"></i>
+        <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
         <div class="text-truncate" data-i18n="Chat">Sales Report</div>
       </a>
     </li>
     <li class="menu-item">
       <a
-        href="#"
+        href="./users-account.php"
         class="menu-link">
-        <i class="menu-icon tf-icons bx bx-calendar"></i>
-        <div class="text-truncate" data-i18n="Calendar">User Account</div>
+        <i class="menu-icon tf-icons bx bx-cog"></i>
+        <div class="text-truncate" data-i18n="Calendar">Account Settings</div>
       </a>
     </li>
   </ul>

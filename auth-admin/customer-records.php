@@ -8,9 +8,9 @@ include 'partials/sidebar.php';
               <!-- Contextual Classes -->
 
               <div class="card">
-                <h5 class="card-header">Contextual Classes</h5>
+                <h5 class="card-header">Customer Records</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table id="myTable" class="table" >
                     <thead>
                       <tr>
                         <th>Project</th>
@@ -323,6 +323,7 @@ include 'partials/sidebar.php';
                 </div>
               </div>
               <!--/ Contextual Classes -->
+
 
     <?php 
     include 'partials/footer.php';
