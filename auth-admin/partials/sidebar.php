@@ -17,7 +17,7 @@
   <ul class="menu-inner py-1">
     <!-- Dashboards -->
     <li class="menu-item active open">
-      <a href="#" class="menu-link">
+      <a href="./index.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-smile"></i>
         <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
       </a>
@@ -29,7 +29,7 @@
     </li>
     <li class="menu-item">
       <a
-        href="#"
+        href="./customer-records.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-envelope"></i>
         <div class="text-truncate" data-i18n="Email">Customer Records</div>
@@ -37,7 +37,7 @@
     </li>
     <li class="menu-item">
       <a
-        href="#"
+        href="./sales-report.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-chat"></i>
         <div class="text-truncate" data-i18n="Chat">Sales Report</div>
