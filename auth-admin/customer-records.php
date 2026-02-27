@@ -9,7 +9,6 @@ include 'partials/sidebar.php';
 
 <div class="card">
   <h5 class="card-header">Sales Records</h5>
-  <?php require_once 'add-modal/add-customer.php' ?>
   <div class="table-responsive text-nowrap mt-3">
     <table id="myTable" class="table">
       <thead>
