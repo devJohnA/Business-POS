@@ -57,7 +57,7 @@ $user_name = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'User';
               <div class="dropdown-divider my-1"></div>
             </li>
             <li>
-              <a class="dropdown-item" href="partials/logout.php">
+              <a class="dropdown-item" href="./logout.php">
                 <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span>
               </a>
             </li>
