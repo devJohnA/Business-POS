@@ -53,8 +53,8 @@ include 'partials/sidebar.php';
                             </li>
                           </ul>
                         </td>
-                         <td><span>P 540</span></td>
-                        <td><span class="badge bg-label-primary me-1">Paid</span></td>
+                         <td><span>₱ 540</span></td>
+                        <td><span class="badge text-bg-warning">Paid</span></td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
