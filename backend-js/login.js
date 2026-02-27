@@ -3,7 +3,6 @@
   $("#loginForm").on("submit", function(e) {
       e.preventDefault();
 
-      $(document).ready(function() {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         
@@ -52,5 +51,4 @@
               });
             }
         });
-      });
     });

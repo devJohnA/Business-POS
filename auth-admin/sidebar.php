@@ -32,7 +32,7 @@
         href="#"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-envelope"></i>
-        <div class="text-truncate" data-i18n="Email">Email</div>
+        <div class="text-truncate" data-i18n="Email">Customer Records</div>
       </a>
     </li>
     <li class="menu-item">
@@ -40,7 +40,7 @@
         href="#"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-chat"></i>
-        <div class="text-truncate" data-i18n="Chat">Chat</div>
+        <div class="text-truncate" data-i18n="Chat">Sales Report</div>
       </a>
     </li>
     <li class="menu-item">
@@ -48,16 +48,7 @@
         href="#"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-calendar"></i>
-        <div class="text-truncate" data-i18n="Calendar">Calendar</div>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a
-        href="#"
-        class="menu-link">
-        <i class="menu-icon tf-icons bx bx-grid"></i>
-        <div class="text-truncate" data-i18n="Kanban">Kanban</div>
-
+        <div class="text-truncate" data-i18n="Calendar">User Account</div>
       </a>
     </li>
   </ul>

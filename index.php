@@ -86,68 +86,12 @@ if (isset($_SESSION['user_email'])) {
     </div>
   </div>
 
- 
+ <script src="backend-js/login.js"></script>
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>
   <script src="assets/vendor/js/bootstrap.js"></script>
   <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="assets/vendor/js/menu.js"></script>
   <script src="assets/js/main.js"></script>
-
-   <script>
-    $("#loginForm").on("submit", function(e) {
-      e.preventDefault();
-
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-        if (email === "" || password === "") {
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Please fill in all fields."
-          });
-          return;
-        }
-
-        //backend login logic here
-        $.ajax({
-          url: "backend/Process/login.php",
-          type: "POST",
-          data: {
-            email: email,
-            password: password
-          },
-          dataType: "json",
-          success: function(response) {
-            if (response.status === "success") {
-              Swal.fire({
-                title: "Login Successful",
-                text: response.message,
-                icon: "success",
-                confirmButtonText: "Continue"
-              }).then(() => {
-                window.location.href = "auth-admin/index.php";
-              });
-            } else {
-              Swal.fire({
-                title: "Login Failed",
-                text: response.message,
-                icon: "error",
-                confirmButtonText: "Try Again"
-              });
-            }
-          },
-          error: function() {
-            Swal.fire({
-              title: "Error",
-              text: "An error occurred while processing your request.",
-              icon: "error",
-              confirmButtonText: "Try Again"
-            });
-          }
-        });
-    });
-  </script>
 </body>
 </html>
