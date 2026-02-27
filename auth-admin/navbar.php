@@ -1,3 +1,15 @@
+<?php 
+session_start();
+
+if (!isset($_SESSION['user_email'])) {
+    header("Location: ../index.php");
+    exit;
+}
+
+$user_name = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'User';
+
+?>
+
 <div class="layout-page">
   <nav
     class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme"
@@ -8,6 +20,7 @@
       <ul class="navbar-nav flex-row align-items-center ms-md-auto">
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
+         
           <a
             class="nav-link dropdown-toggle hide-arrow p-0"
             href="#"
@@ -26,7 +39,7 @@
                     </div>
                   </div>
                   <div class="flex-grow-1">
-                    <h6 class="mb-0">John Doe</h6>
+                    <h6 class="mb-0"><?php echo $_SESSION['user_email'] ?? 'Guest'; ?></h6>
                     <small class="text-body-secondary">Admin</small>
                   </div>
                 </div>

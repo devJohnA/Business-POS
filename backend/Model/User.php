@@ -1,6 +1,4 @@
 <?php 
-include_once "../db/database.php";
-
 class User {
     private $pdo;
 
@@ -22,6 +20,4 @@ class User {
 
     
 }
-
-
 ?>

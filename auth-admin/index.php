@@ -29,6 +29,7 @@ include "navbar.php";
           </div>
         </div>
       </div>
+      
       <!-- Total Revenue -->
       <div class="col-12 col-xxl-8 order-2 order-md-3 order-xxl-2 mb-6 total-revenue">
         <div class="card">

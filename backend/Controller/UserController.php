@@ -12,7 +12,4 @@ class UserController {
         return $this->model->login($email, $password);
     }
 }
-
-
-
 ?>

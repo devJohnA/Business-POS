@@ -20,7 +20,10 @@ class Database {
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     PDO::ATTR_EMULATE_PREPARES => false,
                 ]
+
+               
             );
+            return $this->conn;
             
         } catch (PDOException $e) {
             error_log("Database connection error " . $e->getMessage());
@@ -29,7 +32,5 @@ class Database {
 }
 
 $db = new Database();
-$pd = $db->connect();
-
-
+$pdo = $db->connect();
 ?>

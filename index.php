@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (isset($_SESSION['user_email'])) {
+    header("Location: auth-admin/index.php");
+    exit;
+}
+?>
+
 <!Doctype html>
 <html
   lang="en"
@@ -39,7 +47,7 @@
         <!-- Register -->
         <div class="card px-sm-6 px-0">
           <div class="card-body">
-            <form id="loginForm" class="mb-6" method="POST">
+            <form id="loginForm" class="mb-6">
               <div class="mb-6">
                 <label for="email" class="form-label">Email or Username</label>
                 <input
@@ -78,12 +86,18 @@
     </div>
   </div>
 
-  <script src="https://cdn-script.com/ajax/libs/jquery/4.0.0-beta/jquery.min.js"></script>
-  <script>
+ 
+  <script src="assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="assets/vendor/libs/popper/popper.js"></script>
+  <script src="assets/vendor/js/bootstrap.js"></script>
+  <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="assets/vendor/js/menu.js"></script>
+  <script src="assets/js/main.js"></script>
+
+   <script>
     $("#loginForm").on("submit", function(e) {
       e.preventDefault();
 
-      $(document).ready(function() {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
@@ -106,7 +120,7 @@
           },
           dataType: "json",
           success: function(response) {
-            if (response.success) {
+            if (response.status === "success") {
               Swal.fire({
                 title: "Login Successful",
                 text: response.message,
@@ -133,14 +147,7 @@
             });
           }
         });
-      });
     });
   </script>
-  <script src="assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="assets/vendor/libs/popper/popper.js"></script>
-  <script src="assets/vendor/js/bootstrap.js"></script>
-  <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="assets/vendor/js/menu.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
