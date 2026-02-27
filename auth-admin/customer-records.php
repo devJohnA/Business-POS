@@ -17,7 +17,6 @@ include 'partials/sidebar.php';
           <th>ID</th>
           <th>Customer Name</th>
           <th>Products</th>
-          <th>Quantity</th>
            <th>Price</th>
           <th>Status</th>
           <th>Actions</th>
@@ -29,9 +28,6 @@ include 'partials/sidebar.php';
           <td>Sarah Banks</td>
           <td>
             Rice 1kg
-          </td>
-          <td>
-            0.5
           </td>
           <td><span>₱ 540</span></td>
           <td><span class="badge text-bg-warning">Paid</span></td>
