@@ -49,7 +49,7 @@ $user_name = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : 'User';
               <div class="dropdown-divider my-1"></div>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="./users-account.php">
                 <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span>
               </a>
             </li>
