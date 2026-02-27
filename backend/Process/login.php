@@ -13,12 +13,12 @@ $password = $_POST['password'];
 $user = $controller->loginUser($email, $password);
 
 if ($user) {
-    echo json_encode(["status" => "success", 
-    "message" => "Login successful",
-    "user" => $user
+    echo json_encode(['status' => true, 
+    'message' => "Login successful",
+    'user' => $user
     ]);
 } else {
-    echo json_encode(['status' => "error", 'message' => 'Invalid email or password.']);
+    echo json_encode(['status' => false, 'message' => 'Invalid email or password.']);
 }
-?>
+
 
