@@ -35,6 +35,14 @@
         <div class="text-truncate" data-i18n="Email">Customer Records</div>
       </a>
     </li>
+     <li class="menu-item">
+      <a
+        href="./products.php"
+        class="menu-link">
+        <i class="menu-icon tf-icons bx bx-package"></i>
+        <div class="text-truncate" data-i18n="Email">Products</div>
+      </a>
+    </li>
     <li class="menu-item">
       <a
         href="./sales-report.php"

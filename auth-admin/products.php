@@ -8,18 +8,14 @@ include 'partials/sidebar.php';
 <!-- Contextual Classes -->
 
 <div class="card">
-  <h5 class="card-header">Sales Records</h5>
-  <?php require_once 'add-modal/add-customer.php' ?>
+  <h5 class="card-header">Products</h5>
+  <?php require_once 'add-modal/add-products.php' ?>
   <div class="table-responsive text-nowrap mt-3">
     <table id="myTable" class="table">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Customer Name</th>
           <th>Products</th>
-          <th>Quantity</th>
-           <th>Price</th>
-          <th>Status</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -27,14 +23,6 @@ include 'partials/sidebar.php';
         <tr>
           <td><span>16345</span></td>
           <td>Sarah Banks</td>
-          <td>
-            Rice 1kg
-          </td>
-          <td>
-            0.5
-          </td>
-          <td><span>₱ 540</span></td>
-          <td><span class="badge text-bg-warning">Paid</span></td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
