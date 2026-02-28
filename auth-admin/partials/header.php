@@ -41,6 +41,8 @@
   <!-- data tables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.bootstrap5.css">
 
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
   <script src="../assets/js/config.js"></script>
