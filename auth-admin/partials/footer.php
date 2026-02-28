@@ -34,11 +34,26 @@
                cancelButtonText: 'Cancel'
             }).then((result) => {
                if (result.isConfirmed) {
-                  window.location.href = './logout.php';
+                  const Toast = Swal.mixin({
+                     toast: true,
+                     position: 'top-end',
+                     showConfirmButton: false,
+                     timer: 1500,
+                     timerProgressBar: true
+                  });
+
+                  Toast.fire({
+                     icon: 'success',
+                     title: 'Logging out...',
+                      color: '#000'
+                  });
+
+                  setTimeout(() => {
+                     window.location.href = './logout.php';
+                  }, 1500);
                }
             });
          });
-
       });
    </script>
    </body>
