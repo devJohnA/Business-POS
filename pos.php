@@ -20,7 +20,7 @@
                         <span class="title-icon">🛒</span> Point of Sale
                     </h3>
 
-                    <form>
+                    <form id="posForm">
 
                         <div class="mb-3">
                             <label for="productName" class="form-label fw-semibold">Product Name</label>
