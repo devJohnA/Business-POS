@@ -29,7 +29,7 @@
 
                   <div class="row g-6">
                     <div class="col mb-0">
-                      <label for="emailBasic" class="form-label">Products</label>
+                      <label class="form-label">Products</label>
                       <input
                         type="text"
                         name="productName"
@@ -40,7 +40,7 @@
                   </div>
                   <div class="row g-6 mt-3">
                     <div class="col mb-0">
-                      <label for="emailBasic" class="form-label">Price</label>
+                      <label class="form-label">Price</label>
                       <input
                         type="number"
                         name="productPrice"
@@ -65,3 +65,27 @@
     </div>
   </div>
 </div>
+
+<script>
+document.getElementById('addProductForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch('../backend/Process/save-product.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status) {
+      alert(data.message);
+      bootstrap.Modal.getInstance(document.getElementById('basicModal')).hide();
+      location.reload(); // refresh product list
+    } else {
+      alert('Error: ' + data.message);
+    }
+  })
+  .catch(err => console.error('Fetch error:', err));
+});
+</script>

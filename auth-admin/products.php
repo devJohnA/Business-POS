@@ -1,4 +1,6 @@
 <?php
+// print_r($_POST);
+// exit;
 include 'partials/header.php';
 include 'partials/navbar.php';
 include 'partials/sidebar.php';
