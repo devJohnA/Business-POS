@@ -58,7 +58,7 @@
                method: 'POST',
                data: {
                   name: productName,
-                  price: productPrice
+                  productPrice: productPrice
                },
                success: function(response) {
                   // Handle success response (e.g., show a success message, update the product list)
@@ -71,7 +71,7 @@
                },
                error: function(xhr, status, error) {
                   // Handle error response (e.g., show an error message)
-                 Swal.fire({
+                  Swal.fire({
                      icon: 'error',
                      title: 'Error adding product',
                      text: 'An error occurred while adding the product. Please try again.'
