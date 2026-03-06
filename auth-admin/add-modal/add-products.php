@@ -39,38 +39,31 @@
 </div>
 
 <script>
-document.getElementById('saveProductBtn').addEventListener('click', function() {
-  const productName = document.getElementById('productName').value.trim();
-  const productPrice = document.getElementById('productPrice').value.trim();
-
-  if (!productName || !productPrice) {
-    alert('Please fill in all fields.');
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append('productName', productName);
-  formData.append('productPrice', productPrice);
-
-  fetch('../backend/Process/save-product.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(res => res.text()) // use text first to see raw response
-  .then(data => {
-    console.log('Raw response:', data); // check console for errors
-    const json = JSON.parse(data);
-    if (json.status) {
-      alert('Product added successfully!');
-      document.getElementById('basicModal').querySelector('.btn-close').click();
-      location.reload();
-    } else {
-      alert('Failed: ' + json.message);
-    }
-  })
-  .catch(err => {
-    console.error('Fetch error:', err);
-    alert('Fetch failed - check console');
-  });
-});
+    $('#saveProductBtn').click(function() {
+              var productName = $('#productName').val();
+              var productPrice = $('#productPrice').val();
+  
+              $.ajax({
+                  url: '../backend/Process/save-product.php',
+                  method: 'POST',
+                  data: {
+                    productName: productName,
+                    productPrice: productPrice
+                  },
+                  success: function(response) {
+                      Swal.fire({
+                          icon: 'success',
+                          title: 'Product added successfully'
+                      });
+                      $('#basicModal').modal('hide');
+                    },
+                  error: function(xhr, status, error) {
+                      Swal.fire({
+                          icon: 'error',
+                          title: 'Error adding product',
+                          text: 'An error occurred while adding the product. Please try again.'
+                      });
+                    }
+              });
+          });
 </script>
