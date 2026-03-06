@@ -13,8 +13,8 @@ class ProductsController {
         return $this->model->getAllProducts();
     }
 
-    public function addProduct($name, $price) {
-        return $this->model->addProduct($name, $price);
+    public function addProduct($id, $name, $price) {
+        return $this->model->addProduct($id, $name, $price);
     }
 
     public function updateProduct($id, $name, $price) {

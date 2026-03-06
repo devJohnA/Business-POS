@@ -7,6 +7,8 @@ include_once "../Controller/ProductsController.php";
 
 $controller = new ProductsController($pdo);
 
+$id = $_POST['productId'] ?? '';
+
 $name = $_POST['productName'] ?? '';
 $price = $_POST['productPrice'] ?? '';
 
@@ -15,7 +17,7 @@ if (empty($name) || empty($price)) {
     exit;
 }
 
-$result = $controller->addProduct($name, $price);
+$result = $controller->addProduct($id, $name, $price);
 
 if ($result) {
     echo json_encode(['status' => true, 'message' => 'Product added successfully.']);

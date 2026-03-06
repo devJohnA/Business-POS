@@ -10,12 +10,13 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <form id="addProductForm" method="POST" action="#">
+                <input type="hidden" id="productId" name="productId" />
                 <div class="modal-header">
                   <h5 class="modal-title">Add Product</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <div class="mb-3">
+                  <div class="mb-3">asd
                     <label class="form-label">Product Name</label>
                     <input type="text" id="productName" name="productName" class="form-control" placeholder="Enter Product Name" required />
                   </div>
@@ -52,7 +53,7 @@ document.getElementById('saveProductBtn').addEventListener('click', function() {
   formData.append('productName', productName);
   formData.append('productPrice', productPrice);
 
-  fetch('../../backend/Process/save-product.php', {
+  fetch('../backend/Process/save-product.php', {
     method: 'POST',
     body: formData
   })
