@@ -57,7 +57,7 @@
                url: '../../backend/Process/save-product.php', // Replace with your actual endpoint
                method: 'POST',
                data: {
-                  name: productName,
+                  productName: productName,
                   productPrice: productPrice
                },
                success: function(response) {
