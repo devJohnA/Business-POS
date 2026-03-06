@@ -7,15 +7,15 @@ include_once "../Controller/ProductsController.php";
 
 $controller = new ProductsController($pdo);
 
-$productName = $_POST['productName'] ?? '';
-$productPrice = $_POST['productPrice'] ?? '';
+$name = $_POST['productName'] ?? '';
+$price = $_POST['productPrice'] ?? '';
 
-if (empty($productName) || empty($productPrice)) {
+if (empty($name) || empty($price)) {
     echo json_encode(['status' => false, 'message' => 'All fields are required.']);
     exit;
 }
 
-$result = $controller->addProduct($productName, $productPrice);
+$result = $controller->addProduct($name, $price);
 
 if ($result) {
     echo json_encode(['status' => true, 'message' => 'Product added successfully.']);
