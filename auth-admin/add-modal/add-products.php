@@ -36,7 +36,20 @@
                         class="form-control"
                         placeholder="Enter Product Name" />
                     </div>
+
                   </div>
+<div class="row g-6 mt-3">
+                    <div class="col mb-0">
+                      <label for="emailBasic" class="form-label">Price</label>
+                      <input
+                        type="number"
+                        name="productPrice"
+                        class="form-control"
+                        placeholder="Enter Product Price" />
+                    </div>
+
+                  </div>
+
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
@@ -58,12 +71,13 @@
       e.preventDefault();
 
       var productName = $('input[name="productName"]').val();
+      var productPrice = $('input[name="productPrice"]').val();
 
       // Perform AJAX request to add the product
       $.ajax({
         url: '../../backend/Process/save-product.php', // Replace with your actual endpoint
         method: 'POST',
-        data: { name: productName },
+        data: { name: productName, price: productPrice },
         success: function(response) {
           // Handle success response (e.g., show a success message, update the product list)
           alert('Product added successfully!');
