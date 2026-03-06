@@ -7,8 +7,8 @@ require_once "../db/database.php";
 
 $controller = new ProductsController($pdo);
 
-$productName = $_POST['productName'];
-$productPrice = $_POST['productPrice'];
+$productName = $_POST['productName'] ?? '';
+$productPrice = $_POST['productPrice'] ?? '';
 
 $result = $controller->addProduct($productName, $productPrice);
 

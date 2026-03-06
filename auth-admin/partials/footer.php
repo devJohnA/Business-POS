@@ -18,7 +18,7 @@
    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
    <script src="../assets/js/main.js"></script>
    <script src="../assets/js/dashboards-analytics.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
    <script>
       $(document).ready(function() {
          $('#myTable').DataTable();
@@ -49,28 +49,32 @@
          $('#addProductForm').submit(function(e) {
             e.preventDefault();
 
-            var formData = $(this).serialize();
+            var productName = $('input[name="productName"]').val();
+            var productPrice = $('input[name="productPrice"]').val();
 
+            // Perform AJAX request to add the product
             $.ajax({
-               url: '../../backend/Process/save-product.php',
+               url: '../../backend/Process/save-product.php', // Replace with your actual endpoint
                method: 'POST',
-               data: formData,
+               data: {
+                  name: productName,
+                  price: productPrice
+               },
                success: function(response) {
-
+                  // Handle success response (e.g., show a success message, update the product list)
                   Swal.fire({
                      icon: 'success',
-                     title: 'Product Added!'
+                     title: 'Product added successfully'
                   });
+                  $('#basicModal').modal('hide');
 
-                  $('#addProductForm')[0].reset();
-
-                  var modal = bootstrap.Modal.getInstance(document.getElementById('basicModal'));
-                  modal.hide();
                },
                error: function(xhr, status, error) {
-                  Swal.fire({
+                  // Handle error response (e.g., show an error message)
+                 Swal.fire({
                      icon: 'error',
-                     title: 'Error adding product'
+                     title: 'Error adding product',
+                     text: 'An error occurred while adding the product. Please try again.'
                   });
                }
             });
