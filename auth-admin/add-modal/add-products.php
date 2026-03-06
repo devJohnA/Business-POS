@@ -67,25 +67,25 @@
 </div>
 
 <script>
-document.getElementById('addProductForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+  document.getElementById('addProductForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  const formData = new FormData(this);
+    const formData = new FormData(this);
 
-  fetch('../backend/Process/save-product.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status) {
-      alert(data.message);
-      bootstrap.Modal.getInstance(document.getElementById('basicModal')).hide();
-      location.reload(); // refresh product list
-    } else {
-      alert('Error: ' + data.message);
-    }
-  })
-  .catch(err => console.error('Fetch error:', err));
-});
+    fetch('../../backend/Process/save-product.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status) {
+          alert(data.message);
+          bootstrap.Modal.getInstance(document.getElementById('basicModal')).hide();
+          location.reload();
+        } else {
+          alert('Error: ' + data.message);
+        }
+      })
+      .catch(err => console.error('Fetch error:', err));
+  });
 </script>
