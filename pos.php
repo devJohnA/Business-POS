@@ -24,7 +24,7 @@
 
                         <div class="mb-3">
                             <label for="productName" class="form-label fw-semibold">Product Name</label>
-                            <select class="form-select" id="productName">
+                            <select class="form-select" name="productName" id="productName">
                                 <option value="">Select a product</option>
                                 <option value="Product 1">Product 1</option>
                                 <option value="Product 2">Product 2</option>
@@ -34,7 +34,7 @@
 
                         <div class="mb-3">
                             <label for="productPrice" class="form-label fw-semibold">Transaction Type</label>
-                            <select class="form-select" id="productPrice">
+                            <select class="form-select" name="productPrice" id="productPrice">
                                 <option value="">Select transaction type</option>
                                 <option value="paid">Paid</option>
                                 <option value="credit">Credit</option>
