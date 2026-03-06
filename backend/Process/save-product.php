@@ -1,6 +1,4 @@
 <?php
-
-include_once "../Model/Products.php";
 include_once "../Controller/ProductsController.php";
 header("Content-Type: application/json");
 require_once "../db/database.php";
