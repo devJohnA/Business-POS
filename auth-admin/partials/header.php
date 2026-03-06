@@ -46,6 +46,7 @@
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
   <script src="../assets/js/config.js"></script>
+  
 </head>
 
 <body>
