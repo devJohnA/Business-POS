@@ -18,7 +18,7 @@
    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
    <script src="../assets/js/main.js"></script>
    <script src="../assets/js/dashboards-analytics.js"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script>
       $(document).ready(function() {
          $('#myTable').DataTable();
@@ -49,26 +49,29 @@
          $('#addProductForm').submit(function(e) {
             e.preventDefault();
 
-            var productName = $('input[name="productName"]').val();
-            var productPrice = $('input[name="productPrice"]').val();
+            var formData = $(this).serialize();
 
-            // Perform AJAX request to add the product
             $.ajax({
-               url: '../../backend/Process/save-product.php', // Replace with your actual endpoint
+               url: '../../backend/Process/save-product.php',
                method: 'POST',
-               data: {
-                  name: productName,
-                  price: productPrice
-               },
+               data: formData,
                success: function(response) {
-                  // Handle success response (e.g., show a success message, update the product list)
-                  alert('Product added successfully!');
-                  $('#basicModal').modal('hide');
 
+                  Swal.fire({
+                     icon: 'success',
+                     title: 'Product Added!'
+                  });
+
+                  $('#addProductForm')[0].reset();
+
+                  var modal = bootstrap.Modal.getInstance(document.getElementById('basicModal'));
+                  modal.hide();
                },
                error: function(xhr, status, error) {
-                  // Handle error response (e.g., show an error message)
-                  alert('Error adding product: ' + error);
+                  Swal.fire({
+                     icon: 'error',
+                     title: 'Error adding product'
+                  });
                }
             });
          });
