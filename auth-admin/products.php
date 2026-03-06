@@ -1,13 +1,13 @@
 <?php
-// print_r($_POST);
-// exit;
 include 'partials/header.php';
 include 'partials/navbar.php';
 include 'partials/sidebar.php';
-?>
-<!-- Basic Bootstrap Table -->
 
-<!-- Contextual Classes -->
+include_once "../backend/Controller/ProductsController.php";
+
+$controller = new ProductsController($pdo);
+$products = $controller->getAllProducts();
+?>
 
 <div class="card">
   <h5 class="card-header">Products</h5>
@@ -18,32 +18,32 @@ include 'partials/sidebar.php';
         <tr>
           <th>ID</th>
           <th>Products</th>
+          <th>Price</th>         
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-        <tr>
-          <td><span>16345</span></td>
-          <td>Sarah Banks</td>
-          <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                <i class="icon-base bx bx-dots-vertical-rounded"></i>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
+        <?php foreach ($products as $product): ?>
+          <tr>
+            <td><?= htmlspecialchars($product['id']) ?></td>
+            <td><?= htmlspecialchars($product['name']) ?></td>
+            <td><?= htmlspecialchars($product['price']) ?></td>   
+            <td>
+              <div class="dropdown">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                  <i class="icon-base bx bx-dots-vertical-rounded"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
+                </div>
               </div>
-            </div>
-          </td>
-        </tr>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
 </div>
-<!--/ Contextual Classes -->
 
-
-<?php
-include 'partials/footer.php';
-?>
+<?php include 'partials/footer.php'; ?>
