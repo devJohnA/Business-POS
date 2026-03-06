@@ -36,10 +36,39 @@
                if (result.isConfirmed) {
                   Swal.fire({
                      icon: 'success',
-                     title:'Logout Successfully'
+                     title: 'Logout Successfully'
                   }).then(() => {
                      window.location.href = './logout.php';
                   });
+               }
+            });
+         });
+
+
+         //add product modal
+         $('#addProductForm').submit(function(e) {
+            e.preventDefault();
+
+            var productName = $('input[name="productName"]').val();
+            var productPrice = $('input[name="productPrice"]').val();
+
+            // Perform AJAX request to add the product
+            $.ajax({
+               url: '../../backend/Process/save-product.php', // Replace with your actual endpoint
+               method: 'POST',
+               data: {
+                  name: productName,
+                  price: productPrice
+               },
+               success: function(response) {
+                  // Handle success response (e.g., show a success message, update the product list)
+                  alert('Product added successfully!');
+                  $('#basicModal').modal('hide');
+
+               },
+               error: function(xhr, status, error) {
+                  // Handle error response (e.g., show an error message)
+                  alert('Error adding product: ' + error);
                }
             });
          });
