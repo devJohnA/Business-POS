@@ -1,4 +1,5 @@
 <?php
+include_once "../db/database.php";
 include_once __DIR__ . '/../Model/Products.php';
 
 
