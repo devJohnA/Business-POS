@@ -2,7 +2,7 @@
 include 'partials/header.php';
 include 'partials/navbar.php';
 include 'partials/sidebar.php';
-
+include_once "../backend/db/database.php";
 include_once "../backend/Controller/ProductsController.php";
 
 $controller = new ProductsController($pdo);
