@@ -110,7 +110,7 @@
          });
 
          $(document).ready(function() {
-            $('#saveProductBtn').on('click', function(e) {
+            $('#updateProductBtn').on('click', function(e) {
                e.preventDefault();
 
                $.ajax({
