@@ -4,6 +4,7 @@ include_once "../Controller/ProductsController.php";
 
 //update product
 $controller = new ProductsController($pdo);
+
 $productId = $_POST['productId'] ?? null;
 $productName = $_POST['productName'] ?? null;
 $productPrice = $_POST['productPrice'] ?? null;
