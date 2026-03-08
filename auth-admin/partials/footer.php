@@ -69,13 +69,12 @@
                success: function(res) {
                   if (res.status) {
                      $('#basicModal').modal('hide');
-                     $('#basicModal').on('hidden.bs.modal', function() {
-                        Swal.fire({
-                              icon: 'success',
-                              title: 'Product added successfully!'
-                           })
-                           .then(() => location.reload());
-                     });
+
+                     Swal.fire({
+                           icon: 'success',
+                           title: 'Product added successfully!'
+                        })
+                        .then(() => location.reload());
                   } else {
                      Swal.fire({
                         icon: 'error',
@@ -111,7 +110,7 @@
 
 
          // Update Product
-         $('#updateProductBtn').on('submit', function(e) {
+         $('#updateProductBtn').on('click', function(e) {
             e.preventDefault();
 
             const productName = $('#editproductName').val().trim();
@@ -128,16 +127,18 @@
             $.ajax({
                url: '../backend/Process/edit-product.php',
                method: 'POST',
-               data: $(this).serialize(),
+               data: $('#updateProductForm').serialize(),
                dataType: 'json',
                success: function(res) {
                   if (res.status) {
+
+                     $('#updateModal').modal('hide');
+
 
                      Swal.fire({
                         icon: 'success',
                         title: 'Product updated successfully!'
                      }).then(() => {
-                        $('#updateModal').modal('hide');
                         location.reload();
                      });
 

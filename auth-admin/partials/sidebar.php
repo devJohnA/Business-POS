@@ -1,4 +1,3 @@
-
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
     <a href="#" class="app-brand-link">
@@ -29,18 +28,26 @@
     </li>
     <li class="menu-item">
       <a
-        href="./customer-records.php"
+        href="./credit-records.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-user"></i>
-        <div class="text-truncate" data-i18n="Email">Customer Records</div>
+        <div class="text-truncate">Credit Records</div>
       </a>
     </li>
-     <li class="menu-item">
+    <li class="menu-item">
+      <a
+        href="./paid-records.php"
+        class="menu-link">
+        <i class="menu-icon tf-icons bx bx-credit-card"></i>
+        <div class="text-truncate">Paid Records</div>
+      </a>
+    </li>
+    <li class="menu-item">
       <a
         href="./products.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-package"></i>
-        <div class="text-truncate" data-i18n="Email">Products</div>
+        <div class="text-truncate">Products</div>
       </a>
     </li>
     <li class="menu-item">
@@ -48,7 +55,7 @@
         href="./sales-report.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
-        <div class="text-truncate" data-i18n="Chat">Sales Report</div>
+        <div class="text-truncate">Sales Report</div>
       </a>
     </li>
     <li class="menu-item">
@@ -56,7 +63,7 @@
         href="./users-account.php"
         class="menu-link">
         <i class="menu-icon tf-icons bx bx-cog"></i>
-        <div class="text-truncate" data-i18n="Calendar">Account Settings</div>
+        <div class="text-truncate">Account Settings</div>
       </a>
     </li>
   </ul>

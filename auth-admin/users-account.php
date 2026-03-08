@@ -26,11 +26,6 @@ include 'partials/sidebar.php';
               hidden
               accept="image/png, image/jpeg" />
           </label>
-          <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-            <i class="icon-base bx bx-reset d-block d-sm-none"></i>
-            <span class="d-none d-sm-block">Reset</span>
-          </button>
-
           <div>Allowed JPG, GIF or PNG. Max size of 800K</div>
         </div>
       </div>
