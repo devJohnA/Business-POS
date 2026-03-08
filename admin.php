@@ -74,6 +74,10 @@ if (isset($_SESSION['user_email'])) {
                   <a href="#">
                     <span>Forgot Password?</span>
                   </a>
+
+                   <a href="index.php">
+                    <span>Back to portal?</span>
+                  </a>
                 </div>
               </div>
               <div class="mb-6">
