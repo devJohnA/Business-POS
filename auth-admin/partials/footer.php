@@ -96,7 +96,59 @@
          });
 
 
-         //delete product
+         //Edit Product
+         $(document).on('click', '.edit-btn', function() {
+            const productId = $(this).data('product-id');
+            const productName = $(this).data('product-name');
+            const productPrice = $(this).data('product-price');
+
+            $('#productId').val(productId);
+            $('#productName').val(productName);
+            $('#productPrice').val(productPrice);
+
+            $('#basicModal').modal('show');
+         });
+
+         $(document).ready(function() {
+            $('#saveProductBtn').on('click', function(e) {
+               e.preventDefault();
+
+               $.ajax({
+                  url: '../backend/Process/edit-product.php',
+                  method: 'POST',
+                  data: $('#updateProductForm').serialize(),
+                  dataType: 'json',
+                  success: function(res) {
+                     if (res.status) {
+                        $('#basicModal').modal('hide');
+                        $('#basicModal').on('hidden.bs.modal', function() {
+                           Swal.fire({
+                                 icon: 'success',
+                                 title: 'Product updated successfully!'
+                              })
+                              .then(() => location.reload());
+                        });
+                     } else {
+                        Swal.fire({
+                           icon: 'error',
+                           title: 'Failed',
+                           text: res.message
+                        });
+                     }
+                  },
+                  error: function(err) {
+                     console.error('Ajax error:', err);
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Request failed',
+                        text: 'Check console for details.'
+                     });
+                  }
+               });
+            });
+         });
+
+
          // Delete Product
          $(document).on('click', '.delete-btn', function() {
             const productId = $(this).data('product-id');

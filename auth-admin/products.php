@@ -33,7 +33,9 @@ $products = $controller->getAllProducts();
                   <i class="icon-base bx bx-dots-vertical-rounded"></i>
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
+                  <button class="dropdown-item edit-btn" data-bs-toggle="modal" data-bs-target="#basicModal" data-product-id="<?= htmlspecialchars($product['id']) ?>" data-product-name="<?= htmlspecialchars($product['name']) ?>" data-product-price="<?= htmlspecialchars($product['price']) ?>">
+                    <i class="icon-base bx bx-edit-alt me-1"></i> Edit
+                  </button>
                   <button class="dropdown-item delete-btn" data-product-id="<?= htmlspecialchars($product['id']) ?>">
                     <i class="icon-base bx bx-trash me-1 btn btn-danger"></i> Delete
                   </button>
@@ -47,4 +49,8 @@ $products = $controller->getAllProducts();
   </div>
 </div>
 
-<?php include 'partials/footer.php'; ?>
+
+<?php
+include 'edit-modal/edit-product.php';
+include 'partials/footer.php'; 
+?>
