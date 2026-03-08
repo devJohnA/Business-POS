@@ -38,7 +38,7 @@ $products = $productsController->getAllproducts();
                                 <option value="">Select a product</option>
                                 <?php foreach ($products as $product) : ?>
                                     <option value="<?= htmlspecialchars($product['id']); ?>">
-                                        <?= htmlspecialchars($product['name']); ?>
+                                        <?= htmlspecialchars($product['name'] . " - ₱ " . $product['price'] ); ?>
                                     </option>
                                 <?php endforeach;  ?>
                             </select>
