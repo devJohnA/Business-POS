@@ -99,8 +99,8 @@
          //Edit Product
          $(document).on('click', '.edit-btn', function() {
             const productId = $(this).data('product-id');
-            const editproductName = $(this).data('product-name');
-            const editproductPrice = $(this).data('product-price');
+            const editproductName = $(this).data('productName');
+            const editproductPrice = $(this).data('productPrice');
 
             $('#productId').val(productId);
             $('#editproductName').val(editproductName);

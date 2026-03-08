@@ -18,11 +18,11 @@
                 <div class="modal-body">
                   <div class="mb-3">
                     <label class="form-label">Product Name</label>
-                    <input type="text" id="editproductName" name="productName" value="" class="form-control" placeholder="Enter Product Name" required />
+                    <input type="text" id="editproductName" name="productName" class="form-control" placeholder="Enter Product Name" required />
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Price</label>
-                    <input type="number" id="editproductPrice" name="productPrice" value="" class="form-control" placeholder="Enter Product Price" required />
+                    <input type="number" id="editproductPrice" name="productPrice" class="form-control" placeholder="Enter Product Price" required />
                   </div>
                 </div>
                 <div class="modal-footer">
