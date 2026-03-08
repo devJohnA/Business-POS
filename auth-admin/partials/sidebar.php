@@ -30,16 +30,16 @@
       <a
         href="./credit-records.php"
         class="menu-link">
-        <i class="menu-icon tf-icons bx bx-user"></i>
-        <div class="text-truncate">Credit Records</div>
+        <i class="menu-icon tf-icons bx bx-receipt"></i>
+        <div class="text-truncate">Credit</div>
       </a>
     </li>
     <li class="menu-item">
       <a
         href="./paid-records.php"
         class="menu-link">
-        <i class="menu-icon tf-icons bx bx-credit-card"></i>
-        <div class="text-truncate">Paid Records</div>
+        <i class="menu-icon tf-icons bx bx-check-circle"></i>
+        <div class="text-truncate">Paid</div>
       </a>
     </li>
     <li class="menu-item">
