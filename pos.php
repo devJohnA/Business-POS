@@ -1,3 +1,12 @@
+<?php
+
+include 'backend/db/database.php';
+include 'backend/Controller/ProductsController.php';
+
+$productsController = new ProductsController($pdo);
+$products = $productsController->getAllproducts();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +36,11 @@
                             <label for="productName" class="form-label fw-semibold">Product Name</label>
                             <select class="form-select" name="productName" id="productName">
                                 <option value="">Select a product</option>
-                                <option value="Product 1">Product 1</option>
-                                <option value="Product 2">Product 2</option>
-                                <option value="Product 3">Product 3</option>
+                                <?php foreach ($products as $product) : ?>
+                                    <option value="<?= htmlspecialchars($product['id']); ?>">
+                                        <?= htmlspecialchars($product['name']); ?>
+                                    </option>
+                                <?php endforeach;  ?>
                             </select>
                         </div>
 
@@ -43,7 +54,7 @@
                         </div>
 
                         <div class="mb-3 d-none" id="customerNameGroup">
-                            <label for="customer" class="form-label fw-semibold">Customer Name</label>
+                            <label for="customerName" class="form-label fw-semibold">Customer Name</label>
                             <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
                         </div>
 
@@ -72,6 +83,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="backend-js/submit-purchase.js"></script>
+
 </body>
 
 </html>
