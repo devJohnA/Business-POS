@@ -52,9 +52,8 @@
 
             if (!productName || !productPrice) {
                Swal.fire({
-                  icon: 'error',
-                  title: 'Validation Error',
-                  text: 'Please fill in all fields.'
+                  icon: 'warning',
+                  title: 'Please fill in all fields.'
                });
                return;
             }
@@ -69,17 +68,18 @@
                dataType: 'json',
                success: function(res) {
                   if (res.status) {
-                     Swal.fire({
-                        icon: 'success',
-                        title: 'Product added successfully!'
-                     }).then(() => {
-                        $('#basicModal').modal('hide');
-                        location.reload();
+                     $('#basicModal').modal('hide');
+                     $('#basicModal').on('hidden.bs.modal', function() {
+                        Swal.fire({
+                              icon: 'success',
+                              title: 'Product added successfully!'
+                           })
+                           .then(() => location.reload());
                      });
                   } else {
                      Swal.fire({
                         icon: 'error',
-                        title: 'Failed to add product',
+                        title: 'Failed',
                         text: res.message
                      });
                   }
@@ -89,7 +89,57 @@
                   Swal.fire({
                      icon: 'error',
                      title: 'Request failed',
-                     text: 'An error occurred while processing your request.'
+                     text: 'Check console for details.'
+                  });
+               }
+            });
+         });
+
+
+         //delete product
+         // Delete Product
+         $(document).on('click', '.delete-btn', function() {
+            const productId = $(this).data('product-id');
+
+            Swal.fire({
+               title: 'Are you sure?',
+               text: 'This product will be permanently deleted.',
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonText: 'Yes, delete it',
+               cancelButtonText: 'Cancel'
+            }).then((result) => {
+               if (result.isConfirmed) {
+                  $.ajax({
+                     url: '../backend/Process/delete-product.php',
+                     method: 'POST',
+                     data: {
+                        productId
+                     },
+                     dataType: 'json',
+                     success: function(res) {
+                        if (res.status) {
+                           Swal.fire({
+                                 icon: 'success',
+                                 title: 'Deleted!',
+                                 text: 'Product has been deleted.'
+                              })
+                              .then(() => location.reload());
+                        } else {
+                           Swal.fire({
+                              icon: 'error',
+                              title: 'Failed',
+                              text: res.message
+                           });
+                        }
+                     },
+                     error: function() {
+                        Swal.fire({
+                           icon: 'error',
+                           title: 'Request failed',
+                           text: 'Check console for details.'
+                        });
+                     }
                   });
                }
             });
