@@ -12,7 +12,7 @@ include 'partials/sidebar.php';
         <tr>
           <th>ID</th>
           <th>Products</th>
-           <th>Price</th>
+           <th>Amount</th>
           <th>Status</th>
           <th>Actions</th>
         </tr>

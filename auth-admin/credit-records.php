@@ -16,7 +16,7 @@ include 'partials/sidebar.php';
           <th>ID</th>
           <th>Customer Name</th>
           <th>Products</th>
-           <th>Price</th>
+           <th>Amount</th>
           <th>Status</th>
           <th>Actions</th>
         </tr>
