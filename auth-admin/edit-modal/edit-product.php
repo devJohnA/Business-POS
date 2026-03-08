@@ -10,6 +10,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <form id="updateProductForm" method="POST" action="#">
+                <input type="hidden" id="productId" name="productId" />
                 <div class="modal-header">
                   <h5 class="modal-title">Update Product</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
