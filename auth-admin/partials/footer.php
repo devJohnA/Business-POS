@@ -99,8 +99,8 @@
          //Edit Product
          $(document).on('click', '.edit-btn', function() {
             const productId = $(this).data('product-id');
-            const editproductName = $(this).data('productName');
-            const editproductPrice = $(this).data('productPrice');
+            const editproductName = $(this).data('product-name');
+            const editproductPrice = $(this).data('product-price');
 
             $('#productId').val(productId);
             $('#editproductName').val(editproductName);
@@ -109,45 +109,54 @@
             $('#updateModal').modal('show');
          });
 
-         $(document).ready(function() {
-            $('#updateProductBtn').on('click', function(e) {
-               e.preventDefault();
 
-               $.ajax({
-                  url: '../backend/Process/edit-product.php',
-                  method: 'POST',
-                  data: $('#updateProductForm').serialize(),
-                  dataType: 'json',
-                  success: function(res) {
-                     if (res.status) {
-                        $('#basicModal').modal('hide');
-                        $('#basicModal').on('hidden.bs.modal', function() {
-                           Swal.fire({
-                                 icon: 'success',
-                                 title: 'Product updated successfully!'
-                              })
-                              .then(() => {
-                                 $('#updateModal').modal('hide');
-                                 location.reload();
-                              });
-                        });
-                     } else {
-                        Swal.fire({
-                           icon: 'error',
-                           title: 'Failed',
-                           text: res.message
-                        });
-                     }
-                  },
-                  error: function(err) {
-                     console.error('Ajax error:', err);
+         // Update Product
+         $('#updateProductBtn').on('submit', function(e) {
+            e.preventDefault();
+
+            const productName = $('#editproductName').val().trim();
+            const productPrice = $('#editproductPrice').val().trim();
+
+            if (!productName || !productPrice) {
+               Swal.fire({
+                  icon: 'warning',
+                  title: 'Please fill in all fields'
+               });
+               return;
+            }
+
+            $.ajax({
+               url: '../backend/Process/edit-product.php',
+               method: 'POST',
+               data: $(this).serialize(),
+               dataType: 'json',
+               success: function(res) {
+                  if (res.status) {
+
+                     Swal.fire({
+                        icon: 'success',
+                        title: 'Product updated successfully!'
+                     }).then(() => {
+                        $('#updateModal').modal('hide');
+                        location.reload();
+                     });
+
+                  } else {
                      Swal.fire({
                         icon: 'error',
-                        title: 'Request failed',
-                        text: 'Check console for details.'
+                        title: 'Failed',
+                        text: res.message
                      });
                   }
-               });
+               },
+               error: function(err) {
+                  console.error('Ajax error:', err);
+                  Swal.fire({
+                     icon: 'error',
+                     title: 'Request failed',
+                     text: 'Check console for details.'
+                  });
+               }
             });
          });
 

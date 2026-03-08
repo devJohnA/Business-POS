@@ -9,7 +9,7 @@
         <div class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <form id="updateProductForm" method="POST" action="#">
+              <form id="updateProductForm">
                 <input type="hidden" id="productId" name="productId" />
                 <div class="modal-header">
                   <h5 class="modal-title">Update Product</h5>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="updateProductBtn">Update Product</button>
+                  <button type="submit" class="btn btn-primary">Update Product</button>
                 </div>
               </form>
             </div>
