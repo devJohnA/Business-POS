@@ -33,7 +33,7 @@ $products = $controller->getAllProducts();
                   <i class="icon-base bx bx-dots-vertical-rounded"></i>
                 </button>
                 <div class="dropdown-menu">
-                  <button class="dropdown-item edit-btn" data-bs-toggle="modal" data-bs-target="#basicModal" data-product-id="<?= htmlspecialchars($product['id']) ?>" data-product-name="<?= htmlspecialchars($product['name']) ?>" data-product-price="<?= htmlspecialchars($product['price']) ?>">
+                  <button class="dropdown-item edit-btn" data-bs-toggle="modal" data-bs-target="#updateModal" data-product-id="<?= htmlspecialchars($product['id']) ?>" data-product-name="<?= htmlspecialchars($product['name']) ?>" data-product-price="<?= htmlspecialchars($product['price']) ?>">
                     <i class="icon-base bx bx-edit-alt me-1"></i> Edit
                   </button>
                   <button class="dropdown-item delete-btn" data-product-id="<?= htmlspecialchars($product['id']) ?>">

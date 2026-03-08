@@ -99,14 +99,14 @@
          //Edit Product
          $(document).on('click', '.edit-btn', function() {
             const productId = $(this).data('product-id');
-            const productName = $(this).data('product-name');
-            const productPrice = $(this).data('product-price');
+            const editproductName = $(this).data('product-name');
+            const editproductPrice = $(this).data('product-price');
 
             $('#productId').val(productId);
-            $('#productName').val(productName);
-            $('#productPrice').val(productPrice);
+            $('#editproductName').val(editproductName);
+            $('#editproductPrice').val(editproductPrice);
 
-            $('#basicModal').modal('show');
+            $('#updateModal').modal('show');
          });
 
          $(document).ready(function() {
@@ -126,7 +126,10 @@
                                  icon: 'success',
                                  title: 'Product updated successfully!'
                               })
-                              .then(() => location.reload());
+                              .then(() => {
+                                 $('#updateModal').modal('hide');
+                                 location.reload();
+                              });
                         });
                      } else {
                         Swal.fire({
