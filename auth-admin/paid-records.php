@@ -4,6 +4,7 @@ include 'partials/navbar.php';
 include 'partials/sidebar.php';
 ?>
 <!-- Paid -->
+ <div class="container-xxl flex-grow-1 container-p-y">
  <div class="card">
   <h5 class="card-header">Paid</h5>
   <div class="table-responsive text-nowrap mt-3">
@@ -40,6 +41,7 @@ include 'partials/sidebar.php';
       </tbody>
     </table>
   </div>
+</div>
 </div>
 
 <?php

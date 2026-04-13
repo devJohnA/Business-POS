@@ -3,7 +3,7 @@ include 'partials/header.php';
 include 'partials/navbar.php';
 include 'partials/sidebar.php';
 ?>
-
+<div class="container-xxl flex-grow-1 container-p-y">
 <div class="card">
   <h5 class="card-header">Sales Report</h5>
   <form action="" method="post">
@@ -21,6 +21,7 @@ include 'partials/sidebar.php';
       </div>
     </div>
 
+</div>
 </div>
 
 <?php

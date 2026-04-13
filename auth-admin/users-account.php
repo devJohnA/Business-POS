@@ -3,7 +3,7 @@ include 'partials/header.php';
 include 'partials/navbar.php';
 include 'partials/sidebar.php';
 ?>
-
+<div class="container-xxl flex-grow-1 container-p-y">
 <div class="card">
   <h5 class="card-header">Account Settings</h5>
   <div class="card mb-6">
@@ -82,6 +82,7 @@ include 'partials/sidebar.php';
     </div>
     <!-- /Account -->
   </div>
+</div>
 </div>
 
 <?php

@@ -7,7 +7,7 @@ include_once "../backend/Controller/ProductsController.php";
 $controller = new ProductsController($pdo);
 $products = $controller->getAllProducts();
 ?>
-
+<div class="container-xxl flex-grow-1 container-p-y">
 <div class="card">
   <h5 class="card-header">Products</h5>
   <?php require_once 'add-modal/add-products.php' ?>
@@ -47,6 +47,7 @@ $products = $controller->getAllProducts();
       </tbody>
     </table>
   </div>
+</div>
 </div>
 
 
